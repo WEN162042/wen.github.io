@@ -1,0 +1,255 @@
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  *:before, *:after {
+    box-sizing: border-box;
+  }
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+  img {
+    width: 100%;
+    border: 0;
+  }
+  article,
+  main,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    margin:0;
+	  font-family: PingFangTC-regular, "LiHei Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Source Han Sans TC", "Microsoft JhengHei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" ;
+  }
+  .body-color{
+    /* 外部背景底色 */	  
+    background-color: #e3ff9a;
+  }
+  .sp--960 {
+    position: relative;
+    z-index: 0;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /*-- note start --*/
+  .note {	  
+    font-size: 15px;
+    word-break: break-all;
+	  line-height: 150%;
+  }
+  .note article {
+    padding: 1.5%;
+    /* 內部背景底色 */
+    background-color: #ffffff;
+	  border-radius: 5px;
+  }  
+  .note article a {	  
+	  display: inline;
+    color: #ce2212;
+	  text-decoration: underline;
+    word-break: break-all;
+  } 
+  .note article a:hover {
+	  text-decoration: none;	
+  }       
+  .note li{
+    padding: 5px;
+  }  
+  .note ol>li {
+    margin-left: 30px;
+  }   
+  .act_name {
+    font-size: 32px;	
+	  color: #fff;
+    /* 主標底色 */	  
+    background-color: #15151d;	
+	  line-height: 32px;
+	  text-align: center;
+    letter-spacing: 2px;	
+	  font-weight: bold;
+	  padding: 15px;
+	  border-radius: 5px;
+  }
+  .h2_style {
+	  font-size: 24px;
+    /* 活動名稱顏色 */	  
+	  color: #9b2121;
+	  line-height: 30px;
+	  margin-top: 15px;
+  }
+  @media (max-width: 700px) {
+	.act_name {
+	  font-size: 24px;
+	  line-height: 24px;	
+	 }	  
+	.h2_style {		
+	  font-size: 20px;
+    line-height: 24px;      
+	 }	  
+  }  
+  .p-notice {	
+	  font-size: 24px;  
+  	color: #555555;	
+	  line-height: 42px;  
+	  font-weight: bold;
+	  margin-top: 15px;
+  }  
+  @media (max-width: 700px) {
+	.p-notice {
+	  font-size: 20px;
+	 }	  
+  }    
+  .p-notice-words{
+	  color: #555555;
+  }          
+  .note .decimal-type{
+    /* 阿拉伯數字 */
+    list-style-type: decimal;
+  }
+  .note .lower-alpha-type{
+    /* 小寫英文字母 */
+    list-style-type: lower-alpha;   
+  }
+  .note .none-type{
+    /* 不顯示符號 */   
+    list-style-type: none;
+  }
+  .note .disc-type{
+    /* 實心圓形 */    
+    list-style-type: disc;
+  } 
+  .btn_a1 {	  
+    /* 按鈕底色 */
+    background-color: #ce2212;
+    padding: 5px 30px;  
+    border-radius: 5px;  
+  }
+  .btn_p1 {
+    font-size: 24px;	  
+    line-height: 52px;
+    font-weight: bold;
+    margin: 0 0 5px 35px;
+  }
+  .note article .btn_p1 a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s;		
+  }
+  .note article .btn_p1 a:hover {
+    /* 滑鼠移過 按鈕底色 */	  
+	  background-color: #ff5747;
+  }   
+  /*-- rwd table --*/  
+  .note table.rwd-table {
+    width: 100%;
+    border: none;	
+    border-collapse: collapse;
+    background-color: #eeeeee; 
+    overflow: hidden;
+	  margin: 0 0 10px 0;
+  }
+  .note table.rwd-table th {
+    display: none;
+  }
+  .note table.rwd-table td {
+    display: block;
+    text-align: left;
+  }
+  .note table.rwd-table td:before {
+    content: attr(data-th) ": ";
+    display: inline-block;
+	  margin: 5px 5px 5px 0;
+    color: #9b2121;
+    font-weight: bold;
+  }
+  .note table.rwd-table tr:nth-child(even) {
+    background-color: #dadada;
+  }
+  .note table.rwd-table th, .rwd-table td {
+    margin: .5em 1em;
+  }
+  @media (min-width: 700px) {
+    .note table.rwd-table {
+      width: 95%;
+      border: 1px solid #15151d; 
+      background-color: #fff;
+	    margin: 0 auto 15px;
+    }
+    .note table.rwd-table tr:nth-child(even){
+      background: transparent;
+    }
+    .note table.rwd-table th {
+      /* 表頭底色 */		
+      background-color: #ffe39a; 
+    }
+    .note table.rwd-table th,
+    .note table.rwd-table td {
+      border: 1px solid #15151d;
+    }
+	  .note table.rwd-table td:nth-child(4) {
+      border: 1px solid #15151d;
+	  }	
+    .note table.rwd-table td:before {
+      display: none;
+    }
+    .note table.rwd-table th, .note table.rwd-table td {
+      display: table-cell;
+      padding: .25em .5em;
+      text-align: center;
+    }
+    .note table.rwd-table th, .note table.rwd-table td {
+      padding: 0.8em !important;
+    }
+  } 
+  /* 插入圖片 */		  
+  .photo_style {
+	  display: block;
+	  margin: 0 auto;
+	  max-width: 800px;
+	  padding: 20px;
+	}	
+  /*-- note end --*/
+</style>
+<div id="spWrap" class="sp__wallper">
+  <section class="note body-color" name="note">  
+    <div class="sp--960" style="padding:1% 0 3% 0;">
+      <article>
+		    <a name="note-top" id="note-top"></a>
+        <p class="act_name">日用春遊趣-滿額抽好禮</p>
+        <h2 class="h2_style">【活動辦法】</h2>        
+        <ol class="none-type">
+          <li>活動期間凡購買日用/紙品/清潔/口腔館(https://www.etmall.com.tw/s/16462)之商品，單筆訂單實付發票金額滿額即可登記抽限量好禮，活動門檻符合資格皆依發票實付金額計算，無付款失敗、訂單取消、並於鑑賞期內未退貨者等取消交易之狀況，即可登記抽獎；活動期間每一會員限登記乙次(不得累計及修改)</li>
+		      <li>贈獎形式/時間/效期：</li>
+          <li>預計於2023/06/30前由系統撈單後符合資格者進行抽獎後寄出。(獎項兌獎流程由東森進行，會員完成登記即代表同意東森將會員資料交由東森進行抽獎作業及兌獎流程)
+            <ol class="none-type">
+              <li>活動一、單筆滿$1999登記抽不鏽鋼保鮮盒 (東森/森森共200組)</li>
+              <li>活動二、單筆滿$2999登記抽野餐休閒保溫袋(東森/森森共55組)</li>
+              <li>※網聯通、購享賺、揪好團、電話、直銷下單、電視購物商品不參加此活動(註：電視購物商品係指商品網頁有標記TV標籤之商品)</li>
+            </ol>			  
+		      </li>
+          <li>【贈獎注意事項】</li>
+          <ol class="decimal-type">
+            <li>獎項詳細內容與規格以實物為準，獎項均不得轉換、轉讓或折換現金，中獎資格不可轉讓予第三人。領獎後獎品之使用與維護，東森購物概不負責，若因不可抗力因素造成贈品無法交件，東森購物可將贈品內容更換成等值商品做為替換。</li>
+            <li>主辦單位有權檢視本活動參加者之參加行為及中獎情形是否涉嫌不法或有違常理之異常狀況，包括但不限於下列情況：人為操作蓄意偽造、短時間異常多筆參與行為、透過任何電腦程式參與活動、詐欺或以任何其他不正當的方式意圖以進行不實或虛偽活動參與行為、或登錄資料不實或不正確或盜用任何第三人之資料，或有違反活動規範之行為。活動參加者因上述情形所獲得之活動資格及獎品，主辦方及活動小組保有變更、終止其參加活動資格、取消中獎資格或暫停活動的權利，並對於任何破壞本活動之行為保留法律追訴權，並就因此產生之損害，得向參加者請求賠償。
+            <li>兌獎流程將由金百利主動與得獎人聯繫。依稅法規定，若得獎人於東森購物兌換贈（獎）品金額達新台幣（下同）1,001元以上未達20,010元，將於次年初開立免扣繳憑單予得獎人並向主管稽徵機關申報。</li>
+            <li>本獎品配送區域限臺灣本島地區(外、離島地區請利用臺灣親友地址作為收貨地址)，部分偏遠地區需加收額外運費(區域及實際運費由物流判定)。若因會員資料填寫不完整者，或活動後變更資料(如姓名、手機、地址等)，導致無法收到，恕不補發。</li>
+            <li>此登記活動限訂購東森購物網(購享賺、揪好團、電話下單、電視購物商品除外)，使用網路頁面下單或東森購物APP下單此活動頁商品即可參加。活動贈獎資格及優惠價格以有效訂單為準。若遇主商品訂單取消、銷退時，亦需將贈品一併退回，如贈品有缺損，需賠償贈品市價。</li>
+            <li>贈品數量皆有限量，贈完皆不再補。</li>
+            <li>本活動贈品以東森會員註冊之地址為寄送地址(非寄送到訂單配送地址)，下單時請留意以免贈品無法收到，恕不補發。</li>
+            <li>上述所有活動如遇不可抗拒之狀況產生，東森購物網保留更換、修改或停止活動之權利，相關異動將於東森購物網公告，不另行個別通知。</li>
+            </li>
+          
+        </ol>
+        <p class="btn_p1"><a class="btn_a1" href="#" target="_blank">點我登記</a></p><!-- 最多8字，超過會破版 -->
+      <!-- rwd table -->
+        
